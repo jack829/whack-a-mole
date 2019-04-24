@@ -1,0 +1,39 @@
+.Header {
+  text-align: center;
+}
+
+.Main {
+  text-align: center;
+  padding: 3rem;
+}
+
+.Gameboard {
+  background-color: green;
+  border-radius: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.HoleContainer {
+  height: 6rem;
+  vertical-align: center;
+}
+
+.Hole {
+  height: 4rem;
+  width: 8rem;
+  border-radius: 50%;
+  background-color: black;
+  overflow-y: hidden;
+}
+
+.Mole {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: 4rem;
+}
+
+.ButtonGroup {
+  margin-top: 2rem;
+}
