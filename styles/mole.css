@@ -2,8 +2,31 @@
   height: 100px;
   width: 100px;
   position: relative;
+  animation-name: showMole;
+  animation-duration: 0.5s;
 }
 
 .Mole[aria-hidden="true"] {
+  animation-name: hideMole;
+  animation-duration: 1s;
   top: 4rem;
+  display: inline;
+}
+
+@keyframes showMole {
+  from {
+    top: 4rem;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes hideMole {
+  from {
+    top: 0;
+  }
+  to {
+    top: 4rem;
+  }
 }
