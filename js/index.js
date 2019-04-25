@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
-  console.log('content loaded')
-})
+  const game = new Game();
+});

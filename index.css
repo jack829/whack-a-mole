@@ -31,6 +31,9 @@
   height: 100px;
   width: 100px;
   position: relative;
+}
+
+.Mole[aria-hidden="true"] {
   top: 4rem;
 }
 
