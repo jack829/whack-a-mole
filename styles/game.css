@@ -1,16 +1,3 @@
-[aria-hidden="true"] {
-  display: none;
-}
-
-.Header {
-  text-align: center;
-}
-
-.Main {
-  text-align: center;
-  padding: 3rem;
-}
-
 .Gameboard {
   background-color: green;
   border-radius: 1rem;
@@ -29,16 +16,6 @@
   border-radius: 50%;
   background-color: black;
   overflow-y: hidden;
-}
-
-.Mole {
-  height: 100px;
-  width: 100px;
-  position: relative;
-}
-
-.Mole[aria-hidden="true"] {
-  top: 4rem;
 }
 
 .ButtonGroup {

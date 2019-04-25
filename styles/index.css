@@ -1,0 +1,12 @@
+[aria-hidden="true"] {
+  display: none;
+}
+
+.Header {
+  text-align: center;
+}
+
+.Main {
+  text-align: center;
+  padding: 3rem;
+}
