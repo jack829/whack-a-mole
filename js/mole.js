@@ -8,7 +8,8 @@
     this.showAfterDelay(true)
   }
 
-  Mole.prototype.showAfterDelay = function (onStart = false) {
+  Mole.prototype.showAfterDelay = function (onStart) {
+    onStart = !!onStart;
     this.showInterval = setTimeout(function () {
       clearTimeout(this.showInterval);
       this.show();
