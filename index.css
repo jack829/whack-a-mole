@@ -1,3 +1,7 @@
+[aria-hidden="true"] {
+  display: none;
+}
+
 .Header {
   text-align: center;
 }

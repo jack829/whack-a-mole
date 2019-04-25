@@ -15,6 +15,7 @@
   <main class="Main">
     <section>
       <p>Score: <span id="scoreDisplay">0</span></p>
+      <p>Time Remaining: <span id="timeDisplay"></span> seconds</p>
     </section>
     <table id="gameBoard" class="Gameboard">
       <tr>
@@ -69,11 +70,14 @@
         </td>
       </tr>
     </table>
-    <div class="ButtonGroup">
+    <section class="ButtonGroup">
       <button id="startGame" class="Button Button-success">Start</button>
       <button id="stopGame" class="Button Button-danger" disabled>Stop</button>
       <button id="resetGame" class="Button Button-default" disabled>Reset</button>
-    </div>
+    </section>
+    <section id="finalScoreSection" aria-hidden="true">
+      <p>Game Over! Your final score was: <span id="finalScore"></span></p>
+    </section>
   </main>
 
 <script src="js/timer.js"></script>
