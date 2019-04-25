@@ -4,6 +4,7 @@
   window.Game = function Game() {
     this.moles = [];
     this.score = 0;
+    this.inProgress = false;
     this.timeRemaining = GAME_TIME / 1000;
     // Add an extra second for the GAME_TIME passed into the timer so that we will reach 0 in the countdown.
     this.timer = new Timer(this.reset.bind(this), GAME_TIME + 1000, this.countdown.bind(this));
@@ -26,6 +27,7 @@
   }
 
   Game.prototype.start = function () {
+    this.inProgress = true;
     this.moles = getMolesFromDOM();
     this.moles.forEach(function (mole) {
       mole.activate();
@@ -37,6 +39,7 @@
   }
 
   Game.prototype.stop = function () {
+    this.inProgress = false;
     this.moles.forEach(function (mole) {
       mole.stop();
     });
@@ -46,6 +49,7 @@
   }
 
   Game.prototype.reset = function () {
+    this.inProgress = false;
     this.moles.forEach(function (mole) {
       mole.reset();
     });
@@ -63,6 +67,7 @@
   }
 
   Game.prototype.onAttemptedHit = function (e) {
+    if (!this.inProgress) return;
     const current = e.target;
     const isMole = current.classList.contains('js-Mole');
     if (isMole) {
