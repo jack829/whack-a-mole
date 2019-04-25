@@ -1,13 +1,14 @@
 (function() {
-  const GAME_TIME = 60 * 1000;
+  const GAME_TIME_S = 60;
+  const GAME_TIME_MS = GAME_TIME_S * 1000;
 
   window.Game = function Game() {
     this.moles = [];
     this.score = 0;
     this.inProgress = false;
-    this.timeRemaining = GAME_TIME / 1000;
-    // Add an extra second for the GAME_TIME passed into the timer so that we will reach 0 in the countdown.
-    this.timer = new Timer(this.reset.bind(this), GAME_TIME + 1000, this.countdown.bind(this));
+    this.timeRemaining = GAME_TIME_S;
+    // Add an extra second for the GAME_TIME_MS passed into the timer so that we will reach 0 in the countdown.
+    this.timer = new Timer(this.reset.bind(this), GAME_TIME_MS + 1000, this.countdown.bind(this));
 
     this.timeDisplay = document.getElementById('timeDisplay')
     this.scoreDisplay = document.getElementById('scoreDisplay');
@@ -54,7 +55,7 @@
       mole.reset();
     });
     this.score = 0;
-    this.timeRemaining = GAME_TIME / 1000;
+    this.timeRemaining = GAME_TIME_S;
     this.timer.stop();
     this.countdown(true);
     this.renderScore(this.score);
