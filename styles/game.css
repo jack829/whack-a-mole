@@ -5,6 +5,10 @@
   margin-right: auto;
 }
 
+.Gameboard:hover {
+  cursor: url('../mallet.png'), auto;
+}
+
 .HoleContainer {
   height: 6rem;
   vertical-align: center;
