@@ -1,49 +1,50 @@
 import '../styles/mole.css';
 
-export function Mole(el) {
-  this.el = el;
-  this.isShown = false;
-}
+export class Mole {
+  constructor(el) {
+    this.el = el;
+    this.isShown = false;
+  }
 
-Mole.prototype.activate = function () {
-  this.showAfterDelay(true)
-}
+  activate() {
+    this.showAfterDelay(true)
+  }
 
-Mole.prototype.showAfterDelay = function (onStart) {
-  onStart = !!onStart;
-  this.showInterval = setTimeout(function () {
+  showAfterDelay(onStart = false) {
+    this.showInterval = setTimeout(function () {
+      clearTimeout(this.showInterval);
+      this.show();
+      this.hideAfterDelay();
+    }.bind(this), getRandomTime(onStart));
+  }
+
+  hideAfterDelay() {
+    this.hideInterval = setTimeout(function () {
+      clearInterval(this.hideInterval);
+      this.hide();
+      this.showAfterDelay();
+    }.bind(this), getRandomTime());
+  }
+
+  show() {
+    this.isShown = true;
+    this.el.setAttribute('aria-hidden', 'false');
+  }
+
+  hide() {
+    this.isShown = false;
+    this.el.setAttribute('aria-hidden', 'true');
+  }
+
+  stop() {
     clearTimeout(this.showInterval);
-    this.show();
-    this.hideAfterDelay();
-  }.bind(this), getRandomTime(onStart));
-}
+    clearTimeout(this.hideInterval);
+  }
 
-Mole.prototype.hideAfterDelay = function () {
-  this.hideInterval = setTimeout(function () {
-    clearInterval(this.hideInterval);
+  reset() {
+    this.stop();
     this.hide();
-    this.showAfterDelay();
-  }.bind(this), getRandomTime());
-}
-
-Mole.prototype.show = function () {
-  this.isShown = true;
-  this.el.setAttribute('aria-hidden', 'false');
-}
-
-Mole.prototype.hide = function () {
-  this.isShown = false;
-  this.el.setAttribute('aria-hidden', 'true');
-}
-
-Mole.prototype.stop = function () {
-  clearTimeout(this.showInterval);
-  clearTimeout(this.hideInterval);
-}
-
-Mole.prototype.reset = function () {
-  this.stop();
-  this.hide();
+  }
 }
 
 function getRandomTime(onStart) {
