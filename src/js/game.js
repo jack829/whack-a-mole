@@ -1,5 +1,6 @@
 import { Timer } from './timer';
 import { Mole } from './mole';
+import '../styles/game.css';
 
 const GAME_TIME_S = 60;
 const GAME_TIME_MS = GAME_TIME_S * 1000;

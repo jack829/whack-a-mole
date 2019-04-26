@@ -1,3 +1,5 @@
+import '../styles/mole.css';
+
 export function Mole(el) {
   this.el = el;
   this.isShown = false;
