@@ -11,19 +11,19 @@ export class Mole {
   }
 
   showAfterDelay(onStart = false) {
-    this.showInterval = setTimeout(function () {
+    this.showInterval = setTimeout(() => {
       clearTimeout(this.showInterval);
       this.show();
       this.hideAfterDelay();
-    }.bind(this), getRandomTime(onStart));
+    }, getRandomTime(onStart));
   }
 
   hideAfterDelay() {
-    this.hideInterval = setTimeout(function () {
+    this.hideInterval = setTimeout(() => {
       clearInterval(this.hideInterval);
       this.hide();
       this.showAfterDelay();
-    }.bind(this), getRandomTime());
+    }, getRandomTime());
   }
 
   show() {
