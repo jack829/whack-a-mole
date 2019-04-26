@@ -13,6 +13,10 @@
   display: inline;
 }
 
+.Mole:active {
+  transform: translate(0, 4px);
+}
+
 @keyframes showMole {
   from {
     top: 4rem;
