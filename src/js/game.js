@@ -40,7 +40,7 @@ export class Game {
 
   _stop() {
     this.inProgress = false;
-    this.moles.forEach((mole) => mole._stop());
+    this.moles.forEach((mole) => mole.stop());
     this.timer.stop();
     this.startButtonEl.removeAttribute(DISABLED);
     this.stopButtonEl.setAttribute(DISABLED, DISABLED);
@@ -51,9 +51,12 @@ export class Game {
     this.moles.forEach((mole) => mole.reset());
     this.score = 0;
     this.timeRemaining = GAME_TIME_S;
-    this.timer.stop();
+    this.timer.reset();
     this._countdown(true);
     this._renderScore(this.score);
+    this.startButtonEl.removeAttribute(DISABLED);
+    this.stopButtonEl.setAttribute(DISABLED, DISABLED);
+    this.resetButtonEl.setAttribute(DISABLED, DISABLED);
   }
 
   _gameOver() {
@@ -87,7 +90,7 @@ export class Game {
 
   start() {
     this.inProgress = true;
-    this.moles = getMolesFromDOM();
+    this.moles = this.moles.length ? this.moles : getMolesFromDOM();
     this.moles.forEach((mole) => mole.activate());
     this.timer.start();
     this.startButtonEl.setAttribute(DISABLED, DISABLED);
