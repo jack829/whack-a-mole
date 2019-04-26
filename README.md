@@ -42,3 +42,6 @@ npm run build
 ```
 
 * Copy the file path for `dist/index.html` and paste it into your browser
+
+## Notes on implementation
+I decided to go with an object oriented approach because it makes conceptual sense for tracking game state. I opted to use prototypal methods for functionality that required access to instance state rather than using `.call` or `.apply` to invoke functions scoped to each individual file module. The pitfall is that these "private methods" (indicated by a preceding `_`) are exposed to external modules.
