@@ -1,5 +1,10 @@
 import '../styles/mole.css';
 
+function getRandomTime(onStart) {
+  // Return a random time between 1 (0 on start) and 3 seconds
+  return (Math.random() * 3000) + (onStart ? 0 : 1000);
+}
+
 export class Mole {
   constructor(el) {
     this.el = el;
@@ -7,7 +12,7 @@ export class Mole {
   }
 
   activate() {
-    this.showAfterDelay(true)
+    this.showAfterDelay(true);
   }
 
   showAfterDelay(onStart = false) {
@@ -45,9 +50,4 @@ export class Mole {
     this.stop();
     this.hide();
   }
-}
-
-function getRandomTime(onStart) {
-  // Return a random time between 1 (0 on start) and 3 seconds
-  return (Math.random() * 3000) + (onStart ? 0 : 1000);
 }

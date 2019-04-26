@@ -14,8 +14,8 @@ export class Timer {
     clearTimeout(this.timeoutId);
     this.timeoutId = setTimeout(this.callback, this.remaining);
     if (this.displayCallback) {
-      clearTimeout(this.displayIntervalId)
-      this.displayIntervalId = setInterval(this.displayCallback, 1000)
+      clearTimeout(this.displayIntervalId);
+      this.displayIntervalId = setInterval(this.displayCallback, 1000);
     }
   }
 
