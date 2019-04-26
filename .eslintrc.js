@@ -8,5 +8,6 @@ module.exports = {
     "import/prefer-default-export": 0,
     "no-plusplus": 0,
     "consistent-return": 1,
+    "no-underscore-dangle": 0,
   }
 };

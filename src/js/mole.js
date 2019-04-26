@@ -11,23 +11,19 @@ export class Mole {
     this.isShown = false;
   }
 
-  activate() {
-    this.showAfterDelay(true);
-  }
-
-  showAfterDelay(onStart = false) {
+  _showAfterDelay(onStart = false) {
     this.showInterval = setTimeout(() => {
       clearTimeout(this.showInterval);
       this.show();
-      this.hideAfterDelay();
+      this._hideAfterDelay();
     }, getRandomTime(onStart));
   }
 
-  hideAfterDelay() {
+  _hideAfterDelay() {
     this.hideInterval = setTimeout(() => {
       clearInterval(this.hideInterval);
-      this.hide();
-      this.showAfterDelay();
+      this._hide();
+      this._showAfterDelay();
     }, getRandomTime());
   }
 
@@ -36,9 +32,13 @@ export class Mole {
     this.el.setAttribute('aria-hidden', 'false');
   }
 
-  hide() {
+  _hide() {
     this.isShown = false;
     this.el.setAttribute('aria-hidden', 'true');
+  }
+
+  activate() {
+    this._showAfterDelay(true);
   }
 
   stop() {
@@ -48,6 +48,6 @@ export class Mole {
 
   reset() {
     this.stop();
-    this.hide();
+    this._hide();
   }
 }
