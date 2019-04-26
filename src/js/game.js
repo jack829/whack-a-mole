@@ -1,11 +1,13 @@
 import { Timer } from './timer';
 import { Mole } from './mole';
+import { ARIA_HIDDEN } from './constants';
 import '../styles/game.css';
 
 const GAME_TIME_S = 10;
 const GAME_TIME_MS = GAME_TIME_S * 1000;
-const DISABLED = 'disabled'
-const CLICK = 'click'
+// Use constants for strings used more than once
+const DISABLED = 'disabled';
+const CLICK = 'click';
 
 function getMolesFromDOM() {
   const moleEls = Array.prototype.slice.call(document.getElementsByClassName('js-Mole'));
@@ -18,9 +20,11 @@ export class Game {
     this.score = 0;
     this.inProgress = false;
     this.timeRemaining = GAME_TIME_S;
+
     // Pass extra second into the timer so that we will reach 0 in the countdown.
     this.timer = new Timer(this._reset.bind(this), GAME_TIME_MS + 1000, this._countdown.bind(this));
 
+    // Cache elements that will be modified from user interaction
     this.timeDisplayEl = document.getElementById('timeDisplay');
     this.scoreDisplayEl = document.getElementById('scoreDisplay');
     this.finalScoreGroupEl = document.getElementById('finalScoreSection');
@@ -30,6 +34,7 @@ export class Game {
     this.resetButtonEl = document.getElementById('resetGame');
     const gameBoardEl = document.getElementById('gameBoard');
 
+    // Set listeners for user interaction
     gameBoardEl.addEventListener(CLICK, this._onAttemptedHit.bind(this));
     this.startButtonEl.addEventListener(CLICK, this.start.bind(this));
     this.stopButtonEl.addEventListener(CLICK, this._stop.bind(this));
@@ -48,9 +53,9 @@ export class Game {
 
   _reset() {
     this.inProgress = false;
-    this.moles.forEach((mole) => mole.reset());
     this.score = 0;
     this.timeRemaining = GAME_TIME_S;
+    this.moles.forEach((mole) => mole.reset());
     this.timer.reset();
     this._countdown(true);
     this._renderScore(this.score);
@@ -61,7 +66,7 @@ export class Game {
 
   _gameOver() {
     this.finalScoreEl.textContent = this.score;
-    this.finalScoreGroupEl.removeAttribute('aria-hidden');
+    this.finalScoreGroupEl.removeAttribute(ARIA_HIDDEN);
     this._reset();
   }
 
