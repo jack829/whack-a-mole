@@ -16,22 +16,22 @@ export class Game {
     this.score = 0;
     this.inProgress = false;
     this.timeRemaining = GAME_TIME_S;
-    // Pass extra second into the timer so that we will reach 0 in the _countdown.
+    // Pass extra second into the timer so that we will reach 0 in the countdown.
     this.timer = new Timer(this._reset.bind(this), GAME_TIME_MS + 1000, this._countdown.bind(this));
 
-    this.timeDisplay = document.getElementById('timeDisplay');
-    this.scoreDisplay = document.getElementById('scoreDisplay');
+    this.timeDisplayEl = document.getElementById('timeDisplay');
+    this.scoreDisplayEl = document.getElementById('scoreDisplay');
     this.finalScoreGroupEl = document.getElementById('finalScoreSection');
     this.finalScoreEl = document.getElementById('finalScore');
-    this.gameBoard = document.getElementById('gameBoard');
-    this.startButton = document.getElementById('startGame');
-    this.stopButton = document.getElementById('stopGame');
-    this.resetButton = document.getElementById('resetGame');
+    this.startButtonEl = document.getElementById('startGame');
+    this.stopButtonEl = document.getElementById('stopGame');
+    this.resetButtonEl = document.getElementById('resetGame');
+    const gameBoardEl = document.getElementById('gameBoard');
 
-    this.gameBoard.addEventListener('click', this._onAttemptedHit.bind(this));
-    this.startButton.addEventListener('click', this.start.bind(this));
-    this.stopButton.addEventListener('click', this._stop.bind(this));
-    this.resetButton.addEventListener('click', this._reset.bind(this));
+    gameBoardEl.addEventListener('click', this._onAttemptedHit.bind(this));
+    this.startButtonEl.addEventListener('click', this.start.bind(this));
+    this.stopButtonEl.addEventListener('click', this._stop.bind(this));
+    this.resetButtonEl.addEventListener('click', this._reset.bind(this));
 
     this._countdown(true);
   }
@@ -40,8 +40,8 @@ export class Game {
     this.inProgress = false;
     this.moles.forEach((mole) => mole._stop());
     this.timer._stop();
-    this.startButton.removeAttribute('disabled');
-    this.stopButton.setAttribute('disabled', 'disabled');
+    this.startButtonEl.removeAttribute('disabled');
+    this.stopButtonEl.setAttribute('disabled', 'disabled');
   }
 
   _reset() {
@@ -71,7 +71,7 @@ export class Game {
   }
 
   _renderScore() {
-    this.scoreDisplay.textContent = this.score;
+    this.scoreDisplayEl.textContent = this.score;
   }
 
   _countdown(_reset) {
@@ -80,7 +80,7 @@ export class Game {
       this._gameOver();
       return;
     }
-    this.timeDisplay.textContent = this.timeRemaining;
+    this.timeDisplayEl.textContent = this.timeRemaining;
   }
 
   start() {
@@ -88,8 +88,8 @@ export class Game {
     this.moles = getMolesFromDOM();
     this.moles.forEach((mole) => mole.activate());
     this.timer.start();
-    this.startButton.setAttribute('disabled', 'disabled');
-    this.stopButton.removeAttribute('disabled');
-    this.resetButton.removeAttribute('disabled');
+    this.startButtonEl.setAttribute('disabled', 'disabled');
+    this.stopButtonEl.removeAttribute('disabled');
+    this.resetButtonEl.removeAttribute('disabled');
   }
 }
