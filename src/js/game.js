@@ -1,6 +1,6 @@
 import { Timer } from './timer';
 import { Mole } from './mole';
-import { ARIA_HIDDEN } from './constants';
+import { ARIA_HIDDEN, TRUE_STRING } from './constants';
 import '../styles/game.css';
 
 const GAME_TIME_S = 10;
@@ -90,7 +90,8 @@ export class Game {
       this._gameOver();
       return;
     }
-    this.timeDisplayEl.textContent = this.timeRemaining;
+    this.timeDisplayEl.textContent = this.timeRemaining < 10
+      ? `0${this.timeRemaining}` : this.timeRemaining;
   }
 
   start() {
@@ -101,5 +102,6 @@ export class Game {
     this.startButtonEl.setAttribute(DISABLED, DISABLED);
     this.stopButtonEl.removeAttribute(DISABLED);
     this.resetButtonEl.removeAttribute(DISABLED);
+    this.finalScoreGroupEl.setAttribute(ARIA_HIDDEN, TRUE_STRING);
   }
 }

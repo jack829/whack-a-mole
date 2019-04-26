@@ -11,6 +11,10 @@
   float: left;
 }
 
+.Game_FinalScore {
+  height: 2rem;
+}
+
 .Game_BoardContainer {
   float: right;
   width: 60%;

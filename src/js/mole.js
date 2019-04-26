@@ -1,4 +1,4 @@
-import { ARIA_HIDDEN } from './constants';
+import { ARIA_HIDDEN, TRUE_STRING } from './constants';
 import '../styles/mole.css';
 
 function getRandomTime(onStart) {
@@ -35,7 +35,7 @@ export class Mole {
 
   _hide() {
     this.isShown = false;
-    this.el.setAttribute(ARIA_HIDDEN, 'true');
+    this.el.setAttribute(ARIA_HIDDEN, TRUE_STRING);
   }
 
   activate() {
