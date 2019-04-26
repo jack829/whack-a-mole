@@ -4,6 +4,8 @@ import '../styles/game.css';
 
 const GAME_TIME_S = 10;
 const GAME_TIME_MS = GAME_TIME_S * 1000;
+const DISABLED = 'disabled'
+const CLICK = 'click'
 
 function getMolesFromDOM() {
   const moleEls = Array.prototype.slice.call(document.getElementsByClassName('js-Mole'));
@@ -28,10 +30,10 @@ export class Game {
     this.resetButtonEl = document.getElementById('resetGame');
     const gameBoardEl = document.getElementById('gameBoard');
 
-    gameBoardEl.addEventListener('click', this._onAttemptedHit.bind(this));
-    this.startButtonEl.addEventListener('click', this.start.bind(this));
-    this.stopButtonEl.addEventListener('click', this._stop.bind(this));
-    this.resetButtonEl.addEventListener('click', this._reset.bind(this));
+    gameBoardEl.addEventListener(CLICK, this._onAttemptedHit.bind(this));
+    this.startButtonEl.addEventListener(CLICK, this.start.bind(this));
+    this.stopButtonEl.addEventListener(CLICK, this._stop.bind(this));
+    this.resetButtonEl.addEventListener(CLICK, this._reset.bind(this));
 
     this._countdown(true);
   }
@@ -39,9 +41,9 @@ export class Game {
   _stop() {
     this.inProgress = false;
     this.moles.forEach((mole) => mole._stop());
-    this.timer._stop();
-    this.startButtonEl.removeAttribute('disabled');
-    this.stopButtonEl.setAttribute('disabled', 'disabled');
+    this.timer.stop();
+    this.startButtonEl.removeAttribute(DISABLED);
+    this.stopButtonEl.setAttribute(DISABLED, DISABLED);
   }
 
   _reset() {
@@ -49,7 +51,7 @@ export class Game {
     this.moles.forEach((mole) => mole.reset());
     this.score = 0;
     this.timeRemaining = GAME_TIME_S;
-    this.timer._stop();
+    this.timer.stop();
     this._countdown(true);
     this._renderScore(this.score);
   }
@@ -88,8 +90,8 @@ export class Game {
     this.moles = getMolesFromDOM();
     this.moles.forEach((mole) => mole.activate());
     this.timer.start();
-    this.startButtonEl.setAttribute('disabled', 'disabled');
-    this.stopButtonEl.removeAttribute('disabled');
-    this.resetButtonEl.removeAttribute('disabled');
+    this.startButtonEl.setAttribute(DISABLED, DISABLED);
+    this.stopButtonEl.removeAttribute(DISABLED);
+    this.resetButtonEl.removeAttribute(DISABLED);
   }
 }
