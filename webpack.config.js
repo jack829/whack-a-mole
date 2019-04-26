@@ -32,7 +32,7 @@ const baseConfig = {
     new HTMLWebpackPlugin({
       template: './src/index.html',
       favicon: './src/assets/mole.png',
-    })
+    }),
   ],
 };
 
