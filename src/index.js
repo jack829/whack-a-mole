@@ -1,3 +1,5 @@
+import { Game } from './js/game';
+
 document.addEventListener('DOMContentLoaded', function onDOMContentLoaded() {
-  const game = new Game();
+  new Game();
 });
