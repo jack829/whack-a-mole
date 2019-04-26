@@ -1,5 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
+  height: 100%;
+}
+
+body {
+  background: url('../assets/grass.png');
+  margin: 0;
+  position: relative;
+  height: 100%;
 }
 
 [aria-hidden="true"] {

@@ -14,76 +14,78 @@
 </head>
 <body>
   <header class="Header">
-    <h2>Whack The Moles!</h2>
+    <p class="Text-header">Whack The Moles!</p>
   </header>
 
   <main class="Main">
-    <section class="Game_Meta">
-      <p class="Text-basic">Score: <span id="scoreDisplay" class="Text-emphasis">0</span></p>
-      <p class="Text-basic">Time Remaining: <span id="timeDisplay" class="Text-emphasis"></span> seconds</p>
+    <section class="Game_ControlMetaWrapper">
+      <div class="Game_Meta">
+        <p class="Text-basic">Score: <span id="scoreDisplay" class="Text-emphasis">0</span></p>
+        <p class="Text-basic">Time Remaining: <span id="timeDisplay" class="Text-emphasis"></span> seconds</p>
+        <p class="Text-basic" id="finalScoreSection" aria-hidden="true">Game Over! Your final score was: <span id="finalScore" class="Text-emphasis"></span></p>
+      </div>
     </section>
     <section class="Game_BoardContainer">
       <table id="gameBoard" class="Game_Board">
         <tr>
           <td class="HoleContainer">
             <div class="Hole">
-              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+              <img class="Mole js-Mole" aria-hidden="true" src="assets/mole.png" alt="">
             </div>
           </td>
           <td class="HoleContainer">
             <div class="Hole">
-              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+              <img class="Mole js-Mole" aria-hidden="true" src="assets/mole.png" alt="">
             </div>
           </td>
           <td class="HoleContainer">
             <div class="Hole">
-              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td class="HoleContainer">
-            <div class="Hole">
-              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-            </div>
-          </td>
-          <td class="HoleContainer">
-            <div class="Hole">
-              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-            </div>
-          </td>
-          <td class="HoleContainer">
-            <div class="Hole">
-              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+              <img class="Mole js-Mole" aria-hidden="true" src="assets/mole.png" alt="">
             </div>
           </td>
         </tr>
         <tr>
           <td class="HoleContainer">
             <div class="Hole">
-              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+              <img class="Mole js-Mole" aria-hidden="true" src="assets/mole.png" alt="">
             </div>
           </td>
           <td class="HoleContainer">
             <div class="Hole">
-              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+              <img class="Mole js-Mole" aria-hidden="true" src="assets/mole.png" alt="">
             </div>
           </td>
           <td class="HoleContainer">
             <div class="Hole">
-              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+              <img class="Mole js-Mole" aria-hidden="true" src="assets/mole.png" alt="">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="assets/mole.png" alt="">
+            </div>
+          </td>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="assets/mole.png" alt="">
+            </div>
+          </td>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="assets/mole.png" alt="">
             </div>
           </td>
         </tr>
       </table>
     </section>
-    <section class="Game_Controls">
-      <button id="startGame" class="Button Button-success">Start</button>
-      <button id="stopGame" class="Button Button-danger" disabled>Stop</button>
-      <button id="resetGame" class="Button Button-default" disabled>Reset</button>
-    </section>
-    <section id="finalScoreSection" aria-hidden="true">
-      <p class="Text-basic">Game Over! Your final score was: <span id="finalScore" class="Text-emphasis"></span></p>
+    <section class="Game_ControlMetaWrapper">
+      <div class="Game_Controls">
+        <button id="startGame" class="Button Button-success">Start</button>
+        <button id="stopGame" class="Button Button-danger" disabled>Stop</button>
+        <button id="resetGame" class="Button Button-default" disabled>Reset</button>
+      </div>
     </section>
   </main>
 

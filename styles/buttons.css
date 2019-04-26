@@ -6,6 +6,10 @@
   border-radius: 3px;
 }
 
+.Button:not(:first-child) {
+  margin-left: 1rem;
+}
+
 .Button:active {
   outline: none;
   transform: translate(0, 2px);
@@ -31,6 +35,6 @@
 }
 
 .Button-default {
-  background-color: #ddd;
+  background-color: #fff;
   color: black;
 }

@@ -1,6 +1,14 @@
 .Game_Meta {
-  float: left;
   margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(56, 238, 255, 0.7);
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.Game_ControlMetaWrapper {
+  width: 40%;
+  float: left;
 }
 
 .Game_BoardContainer {
@@ -9,14 +17,13 @@
 }
 
 .Game_Board {
-  background-color: green;
   border-radius: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 .Game_Board:hover {
-  cursor: url('../mallet.png'), auto;
+  cursor: url('../assets/mallet.png'), auto;
 }
 
 .HoleContainer {
@@ -32,17 +39,29 @@
 }
 
 .Game_Controls {
-  margin-top: 2rem;
-  float: left;
+  padding: 2rem 0;
   clear: left;
+  background-color: rgba(56, 238, 255, 1);
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 @media screen and (max-width: 790px) {
-  .Game_Meta, .Game_BoardContainer, .Game_Controls {
+  .Game_ControlMetaWrapper,
+  .Game_BoardContainer {
     float: none;
+    width: 100%;
   }
 
   .Game_BoardContainer {
     width: 100%;
+  }
+
+  .Game_Meta, .Game_Controls {
+    width: auto;
+    display: table;
+    border-radius: 1rem;
+    margin: auto;
+    padding: 1rem;
   }
 }

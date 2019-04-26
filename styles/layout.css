@@ -1,17 +1,26 @@
 .Header {
   text-align: center;
+  background: rgba(56, 238, 255, 0.7);
+  position: fixed;
+  width: 100%;
 }
 
 .Main {
+  position: relative;
   text-align: center;
-  padding: 3rem 5rem;
+  padding: 12rem 5rem;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 
 @media screen and (max-width: 790px) {
   .Main {
-    padding: 2rem;
+    padding: 8rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
   }
 }
