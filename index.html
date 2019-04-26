@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/game.css">
   <link rel="stylesheet" href="styles/mole.css">
+  <link rel="stylesheet" href="styles/buttons.css">
+  <link rel="stylesheet" href="styles/text.css">
   <title>Whackamole</title>
 </head>
 <body>
@@ -15,70 +18,72 @@
   </header>
 
   <main class="Main">
-    <section>
-      <p>Score: <span id="scoreDisplay">0</span></p>
-      <p>Time Remaining: <span id="timeDisplay"></span> seconds</p>
+    <section class="Game_Meta">
+      <p class="Text-basic">Score: <span id="scoreDisplay" class="Text-emphasis">0</span></p>
+      <p class="Text-basic">Time Remaining: <span id="timeDisplay" class="Text-emphasis"></span> seconds</p>
     </section>
-    <table id="gameBoard" class="Gameboard">
-      <tr>
-        <td class="HoleContainer">
-          <div class="Hole">
-            <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-          </div>
-        </td>
-        <td class="HoleContainer">
-          <div class="Hole">
-            <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-          </div>
-        </td>
-        <td class="HoleContainer">
-          <div class="Hole">
-            <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="HoleContainer">
-          <div class="Hole">
-            <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-          </div>
-        </td>
-        <td class="HoleContainer">
-          <div class="Hole">
-            <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-          </div>
-        </td>
-        <td class="HoleContainer">
-          <div class="Hole">
-            <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="HoleContainer">
-          <div class="Hole">
-            <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-          </div>
-        </td>
-        <td class="HoleContainer">
-          <div class="Hole">
-            <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-          </div>
-        </td>
-        <td class="HoleContainer">
-          <div class="Hole">
-            <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
-          </div>
-        </td>
-      </tr>
-    </table>
-    <section class="ButtonGroup">
+    <section class="Game_BoardContainer">
+      <table id="gameBoard" class="Game_Board">
+        <tr>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+            </div>
+          </td>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+            </div>
+          </td>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+            </div>
+          </td>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+            </div>
+          </td>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+            </div>
+          </td>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+            </div>
+          </td>
+          <td class="HoleContainer">
+            <div class="Hole">
+              <img class="Mole js-Mole" aria-hidden="true" src="mole.png" alt="">
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
+    <section class="Game_Controls">
       <button id="startGame" class="Button Button-success">Start</button>
       <button id="stopGame" class="Button Button-danger" disabled>Stop</button>
       <button id="resetGame" class="Button Button-default" disabled>Reset</button>
     </section>
     <section id="finalScoreSection" aria-hidden="true">
-      <p>Game Over! Your final score was: <span id="finalScore"></span></p>
+      <p class="Text-basic">Game Over! Your final score was: <span id="finalScore" class="Text-emphasis"></span></p>
     </section>
   </main>
 

@@ -1,0 +1,36 @@
+.Button {
+  border: none;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 3px;
+}
+
+.Button:active {
+  outline: none;
+  transform: translate(0, 2px);
+}
+
+.Button:focus {
+  outline: none;
+}
+
+.Button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.Button-success {
+  background-color: green;
+  color: white;
+}
+
+.Button-danger {
+  background-color: red;
+  color: white;
+}
+
+.Button-default {
+  background-color: #ddd;
+  color: black;
+}

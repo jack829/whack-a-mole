@@ -1,6 +1,6 @@
 .Mole {
-  height: 100px;
-  width: 100px;
+  height: 6.25rem;
+  width: 6.25rem;
   position: relative;
   animation-name: showMole;
   animation-duration: 0.5s;

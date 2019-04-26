@@ -1,0 +1,10 @@
+.Text-emphasis {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 513px) {
+  /* Keep actual font-size the same for text */
+  .Text-basic {
+    font-size: 1.33rem;
+  }
+}

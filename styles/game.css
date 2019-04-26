@@ -1,27 +1,48 @@
-.Gameboard {
+.Game_Meta {
+  float: left;
+  margin-top: 2rem;
+}
+
+.Game_BoardContainer {
+  float: right;
+  width: 60%;
+}
+
+.Game_Board {
   background-color: green;
   border-radius: 1rem;
   margin-left: auto;
   margin-right: auto;
 }
 
-.Gameboard:hover {
+.Game_Board:hover {
   cursor: url('../mallet.png'), auto;
 }
 
 .HoleContainer {
-  height: 6rem;
   vertical-align: center;
+  padding: 1rem;
 }
 
 .Hole {
   height: 4rem;
-  width: 8rem;
   border-radius: 50%;
   background-color: black;
   overflow-y: hidden;
 }
 
-.ButtonGroup {
+.Game_Controls {
   margin-top: 2rem;
+  float: left;
+  clear: left;
+}
+
+@media screen and (max-width: 790px) {
+  .Game_Meta, .Game_BoardContainer, .Game_Controls {
+    float: none;
+  }
+
+  .Game_BoardContainer {
+    width: 100%;
+  }
 }
