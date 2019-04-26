@@ -3,7 +3,7 @@ How many moles can you whack?
 
 ## Tested on
 | [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/edge.png" alt="IE / Edge" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/godban/browsers-support-badges/master/src/images/chrome.png" alt="Chrome" width="16px" height="16px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome |
-| --------- | --------- | --------- | --------- |
+| --------- | --------- |
 | IE11| latest
 
 
@@ -12,7 +12,7 @@ Requirements
 * `node >= v8.6`
 * NPM
 
-* Note: checkout the branch `without-webpack` to skip the following steps
+* Note: checkout the branch `without-webpack` for an earlier version that skips the following steps
 
 ### Steps:
 1. From the command line, clone the repo
